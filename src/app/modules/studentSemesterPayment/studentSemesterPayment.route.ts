@@ -7,8 +7,8 @@ const router = express.Router()
 
 
 router.get('/', auth(ENUM_USER_ROLE.FACULTY, ENUM_USER_ROLE.ADMIN), StudentSemesterPaymentController.getAllFromDB)
-router.get('/my-semester-payment', auth(ENUM_USER_ROLE.STUDENT), StudentSemesterPaymentController.getMySemesterPayment)
 router.post('/initiate-payment', auth(ENUM_USER_ROLE.STUDENT), StudentSemesterPaymentController.initiatePayment)
+router.get('/my-semester-payment', auth(ENUM_USER_ROLE.STUDENT), StudentSemesterPaymentController.getMySemesterPayment)
 router.post('/complete-payment', auth(ENUM_USER_ROLE.STUDENT), StudentSemesterPaymentController.completePayment)
 
 

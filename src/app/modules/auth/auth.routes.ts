@@ -22,5 +22,11 @@ auth(ENUM_USER_ROLE.SUPER_ADMIN,
 validateRequest(AuthValidation.changePasswordZodSchema),
 AuthenticationController.changePassword
 )
+router.post('/forgot-password', 
+AuthenticationController.forgotPassword
+)
+router.post('/reset-password', 
+AuthenticationController.resetPassword
+)
 
 export const AuthenticationRoutes = router
